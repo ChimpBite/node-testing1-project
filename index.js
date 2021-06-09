@@ -8,6 +8,9 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  Object.keys(obj).map((key) => (obj[key] = obj[key].trim()));
+  console.log(obj);
+  return obj;
 }
 
 /**
@@ -20,6 +23,9 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  Object.keys(obj).map((key) => (obj[key] = obj[key].trim()));
+  console.log('Jane', obj);
+  return obj;
 }
 
 /**
@@ -32,6 +38,9 @@ function trimPropertiesMutation(obj) {
  */
 function findLargestInteger(integers) {
   // ✨ implement
+  const max = Math.max.apply(null, integers);
+  console.log(max);
+  return max;
 }
 
 class Counter {
@@ -41,6 +50,7 @@ class Counter {
    */
   constructor(initialNumber) {
     // ✨ initialize whatever properties are needed
+    this.count = initialNumber;
   }
 
   /**
@@ -57,6 +67,8 @@ class Counter {
    */
   countDown() {
     // ✨ implement
+    console.log(this.count);
+    return this.count;
   }
 }
 
@@ -66,6 +78,7 @@ class Seasons {
    */
   constructor() {
     // ✨ initialize whatever properties are needed
+    this.season = '';
   }
 
   /**
@@ -80,8 +93,10 @@ class Seasons {
    * seasons.next() // returns "spring"
    * seasons.next() // returns "summer"
    */
-  next() {
+  next(season) {
     // ✨ implement
+    console.log(season);
+    return season;
   }
 }
 
@@ -93,9 +108,10 @@ class Car {
    * @param {number} mpg - miles the car can drive per gallon of gas
    */
   constructor(name, tankSize, mpg) {
-    this.odometer = 0 // car initilizes with zero miles
-    this.tank = tankSize // car initiazes full of gas
+    this.odometer = 0; // car initilizes with zero miles
+    this.tank = tankSize; // car initiazes full of gas
     // ✨ initialize whatever other properties are needed
+    this.mpg = mpg;
   }
 
   /**
@@ -113,6 +129,8 @@ class Car {
    */
   drive(distance) {
     // ✨ implement
+    this.odometer += distance;
+    return distance;
   }
 
   /**
@@ -162,4 +180,4 @@ module.exports = {
   Counter,
   Seasons,
   Car,
-}
+};
